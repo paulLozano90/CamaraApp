@@ -24,15 +24,14 @@ namespace CamaraApp
                 Name = "mifoto.jpg"
             });
 
-            if (f != null)
-            {
-                MiFoto.Source = ImageSource.FromStream(() =>
-                {
-                    var st = f.GetStream();
-                    f.Dispose();
-                    return st;
-                });
-            }
+            var st = f.GetStream();
+            f.Dispose();
+            var l = st.Length;
+            byte[] bt = new byte[l];
+            st.Read(bt, 0, bt.Length);
+            var upload = new UploadFile();
+            await upload.SubirFoto(bt);
+            MiFoto.Source = ImageSource.FromStream(() => st);
         }
     }
 }
