@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CamaraApp.Foto">
+  <StackLayout>
+    <Image x:Name="MiFoto"></Image>
+    <Button Text="¡Haz una foto!" Clicked="Button_OnClicked" BackgroundColor="Navy"
+            TextColor="White" BorderRadius="20" BorderWidth="2" BorderColor="White"></Button>
+  </StackLayout>
+</ContentPage>
